@@ -1,0 +1,60 @@
+
+    /* Style for the main container */  div {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+/* Style for topic title */
+h2 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Style for author paragraph */
+p {
+    color: #777;
+    margin-bottom: 10px;
+}
+
+/* Style for comments list */
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Style for each comment */
+li {
+    border-bottom: 1px solid #ccc;
+    padding: 5px;
+    margin-bottom: 5px;
+}
+
+/* Style for comment form */
+.comment-form {
+    margin-top: 10px;
+}
+
+/* Style for textarea in the comment form */
+textarea {
+    width: 100%;
+    height: 80px;
+    margin-bottom: 10px;
+}
+
+/* Style for the submit button in the comment form */
+.submit {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Hover effect for the submit button */
+.submit:hover {
+    background-color: #45a049;
+}
+

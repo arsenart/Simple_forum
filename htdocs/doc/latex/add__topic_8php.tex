@@ -1,0 +1,60 @@
+\doxysection{src/add\+\_\+topic.php File Reference}
+\hypertarget{add__topic_8php}{}\label{add__topic_8php}\index{src/add\_topic.php@{src/add\_topic.php}}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{add__topic_8php_a199e84029e74eb91a2f49e6f83719b26}\label{add__topic_8php_a199e84029e74eb91a2f49e6f83719b26} 
+{\bfseries \$topic} = \$\+\_\+\+POST\mbox{[}\textquotesingle{}Topic\textquotesingle{}\mbox{]}
+\item 
+\Hypertarget{add__topic_8php_adf95f30eaafccead90ab5e2cdb55e9b9}\label{add__topic_8php_adf95f30eaafccead90ab5e2cdb55e9b9} 
+{\bfseries \$text} = \$\+\_\+\+POST\mbox{[}\textquotesingle{}text\textquotesingle{}\mbox{]}
+\item 
+\Hypertarget{add__topic_8php_ac35b828f7d4064a7c9f849c255468ee3}\label{add__topic_8php_ac35b828f7d4064a7c9f849c255468ee3} 
+{\bfseries \$author} = \$\+\_\+\+SESSION\mbox{[}\textquotesingle{}username\textquotesingle{}\mbox{]}
+\item 
+\Hypertarget{add__topic_8php_a2de753ca44dd5672c81bd97c5ba67e8d}\label{add__topic_8php_a2de753ca44dd5672c81bd97c5ba67e8d} 
+{\bfseries \$sql\+Check\+Topic} = "{}SELECT \texorpdfstring{$\ast$}{*} FROM topics WHERE topic = ?"{}
+\item 
+\mbox{\hyperlink{add__topic_8php_a335513cfecddb064c2e82b9dc22a575f}{\$stmt\+Check\+Topic}} = \$conn-\/$>$prepare(\$sql\+Check\+Topic)
+\item 
+\Hypertarget{add__topic_8php_af35591eb8575f15cf1f3ce36cc109f1d}\label{add__topic_8php_af35591eb8575f15cf1f3ce36cc109f1d} 
+{\bfseries \$result\+Check\+Topic} = \$stmt\+Check\+Topic-\/$>$get\+\_\+result()
+\item 
+\Hypertarget{add__topic_8php_a5cafbad614430999f94c3b5d7df72ae2}\label{add__topic_8php_a5cafbad614430999f94c3b5d7df72ae2} 
+{\bfseries \$sql\+Insert\+Topic} = "{}INSERT INTO topics(Author, topic) VALUES (?, ?)"{}
+\item 
+\mbox{\hyperlink{add__topic_8php_ac75ff4b1f5b7838ff4912e130c4ed57a}{\$stmt\+Insert\+Topic}} = \$conn-\/$>$prepare(\$sql\+Insert\+Topic)
+\item 
+\Hypertarget{add__topic_8php_a213b5776b34d4e439c5301a59d6debcc}\label{add__topic_8php_a213b5776b34d4e439c5301a59d6debcc} 
+{\bfseries \$topic\+\_\+id} = \$stmt\+Insert\+Topic-\/$>$insert\+\_\+id
+\item 
+\Hypertarget{add__topic_8php_a4d6f92ffb3023f87aec9723ae1ebffaa}\label{add__topic_8php_a4d6f92ffb3023f87aec9723ae1ebffaa} 
+{\bfseries \$sql\+Insert\+Comment} = "{}INSERT INTO comments(topic\+\_\+id, username, message) VALUES (?, ?, ?)"{}
+\item 
+\mbox{\hyperlink{add__topic_8php_aa1c10e32e1595ec0cd26ffcfe4bc06f4}{\$stmt\+Insert\+Comment}} = \$conn-\/$>$prepare(\$sql\+Insert\+Comment)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Handle the submission of a new topic and associated comments. 
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{add__topic_8php_a335513cfecddb064c2e82b9dc22a575f}\label{add__topic_8php_a335513cfecddb064c2e82b9dc22a575f} 
+\index{add\_topic.php@{add\_topic.php}!\$stmtCheckTopic@{\$stmtCheckTopic}}
+\index{\$stmtCheckTopic@{\$stmtCheckTopic}!add\_topic.php@{add\_topic.php}}
+\doxysubsubsection{\texorpdfstring{\$stmtCheckTopic}{\$stmtCheckTopic}}
+{\footnotesize\ttfamily \$stmt\+Check\+Topic = \$conn-\/$>$prepare(\$sql\+Check\+Topic)}
+
+Prepare and bind parameters for the SQL query. \Hypertarget{add__topic_8php_aa1c10e32e1595ec0cd26ffcfe4bc06f4}\label{add__topic_8php_aa1c10e32e1595ec0cd26ffcfe4bc06f4} 
+\index{add\_topic.php@{add\_topic.php}!\$stmtInsertComment@{\$stmtInsertComment}}
+\index{\$stmtInsertComment@{\$stmtInsertComment}!add\_topic.php@{add\_topic.php}}
+\doxysubsubsection{\texorpdfstring{\$stmtInsertComment}{\$stmtInsertComment}}
+{\footnotesize\ttfamily \$stmt\+Insert\+Comment = \$conn-\/$>$prepare(\$sql\+Insert\+Comment)}
+
+Prepare and bind parameters for the SQL query. \Hypertarget{add__topic_8php_ac75ff4b1f5b7838ff4912e130c4ed57a}\label{add__topic_8php_ac75ff4b1f5b7838ff4912e130c4ed57a} 
+\index{add\_topic.php@{add\_topic.php}!\$stmtInsertTopic@{\$stmtInsertTopic}}
+\index{\$stmtInsertTopic@{\$stmtInsertTopic}!add\_topic.php@{add\_topic.php}}
+\doxysubsubsection{\texorpdfstring{\$stmtInsertTopic}{\$stmtInsertTopic}}
+{\footnotesize\ttfamily \$stmt\+Insert\+Topic = \$conn-\/$>$prepare(\$sql\+Insert\+Topic)}
+
+Prepare and bind parameters for the SQL query. 

@@ -1,0 +1,36 @@
+\doxysection{sign\+\_\+in.\+php File Reference}
+\hypertarget{sign__in_8php}{}\label{sign__in_8php}\index{sign\_in.php@{sign\_in.php}}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{create__topic_8php_a5c2e1f936ba91234d2079b8d79d02f15}{if}}(isset( \$\+\_\+\+COOKIE\mbox{[} \textquotesingle{}user\textquotesingle{}\mbox{]})) \mbox{\hyperlink{create__topic_8php_a5c2e1f936ba91234d2079b8d79d02f15}{if}}(isset(\$\+\_\+\+COOKIE\mbox{[}\textquotesingle{}user\textquotesingle{}\mbox{]})) \mbox{\hyperlink{sign__in_8php_aeeb56241711eb651f6c8df9bbf59038c}{else}}
+\item 
+if(isset( \$\+\_\+\+SESSION\mbox{[} \textquotesingle{}sign\+\_\+error\textquotesingle{}\mbox{]})) \mbox{\hyperlink{sign__in_8php_ae06957763866cbce99151195925cfc3d}{if}} (!empty( \$\+\_\+\+SESSION\mbox{[} \textquotesingle{}sign\+\_\+error\textquotesingle{}\mbox{]}))
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Sign-\/in Page.
+
+PHP version 7.\+4 
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{sign__in_8php_aeeb56241711eb651f6c8df9bbf59038c}\label{sign__in_8php_aeeb56241711eb651f6c8df9bbf59038c} 
+\index{sign\_in.php@{sign\_in.php}!else@{else}}
+\index{else@{else}!sign\_in.php@{sign\_in.php}}
+\doxysubsubsection{\texorpdfstring{else}{else}}
+{\footnotesize\ttfamily \mbox{\hyperlink{create__topic_8php_a5c2e1f936ba91234d2079b8d79d02f15}{if}}(isset(\$\+\_\+\+COOKIE\mbox{[}\textquotesingle{}user\textquotesingle{}\mbox{]})) \mbox{\hyperlink{create__topic_8php_a5c2e1f936ba91234d2079b8d79d02f15}{if}} (isset( \$\+\_\+\+COOKIE\mbox{[} \textquotesingle{}user\textquotesingle{}\mbox{]})) else}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ include\_once\ \textcolor{stringliteral}{'header.php'}}
+
+\end{DoxyCode}
+Redirect to the index page if the user is already signed in. Include header based on user authentication. \Hypertarget{sign__in_8php_ae06957763866cbce99151195925cfc3d}\label{sign__in_8php_ae06957763866cbce99151195925cfc3d} 
+\index{sign\_in.php@{sign\_in.php}!if@{if}}
+\index{if@{if}!sign\_in.php@{sign\_in.php}}
+\doxysubsubsection{\texorpdfstring{if}{if}}
+{\footnotesize\ttfamily if(isset(\$\+\_\+\+SESSION\mbox{[}\textquotesingle{}sign\+\_\+error\textquotesingle{}\mbox{]})) if(!empty(\$\+\_\+\+SESSION\mbox{[}\textquotesingle{}sign\+\_\+error\textquotesingle{}\mbox{]})) (\begin{DoxyParamCaption}\item[{!}]{empty \$\+\_\+\+SESSION\mbox{[} \textquotesingle{}sign\+\_\+error\textquotesingle{}\mbox{]} }\end{DoxyParamCaption})}
+
+Include footer. 

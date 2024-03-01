@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student.cz</title>
+    <link rel="stylesheet" href="css.css">
+
+</head>
+<body>
+<?php
+require_once 'src/db.php';
+session_start();
+if(isset($_COOKIE['user']))
+{
+    include_once 'header_reg.php';
+}
+else
+{
+    include_once 'header.php';
+}
+
+
+?>
+<main>
+    <form method="get" id ="search_form">
+        <input type="text" placeholder="search..." id="search">
+        <input id ='submit' type="submit" value="search">
+    </form>
+
+
+    <a class="topic" href="create_topic.php">New Topic</a>
+    <?php
+    $topic_per_page= 3;
+    $current_page = isset($_GET['page'])?$_GET['page']:1;
+    $offset=($current_page-1)*$topic_per_page;
+    $sql ="SELECT * FROM topics";
+    $result =$conn->query($sql);
+    while ($row = $result->fetch_assoc()){
+        $topic_id = $row['id'];
+        $topic_author = $row['Author'];
+        $topic_title = $row['topic'];
+
+
+        echo "<h2>$topic_title</h2>";
+        echo "<p>Author: $topic_author</p>";
+
+        $sql1 ="SELECT *FROM comments where topic_id=$topic_id";
+        $result1 = $conn->query($sql1);
+
+
+        echo '<ul>';
+        while ($row1=$result1->fetch_assoc()){
+            $comment_author = $row1['username'];
+            $comment_message = htmlspecialchars($row1['message']);
+            $comment_created_at = $row1['created_at'];
+            echo "<li class='user_message'>$comment_author:$comment_message: $comment_created_at</li>";
+        }
+        if(isset($_COOKIE['user'])) {
+            $user= $_COOKIE['user'];
+
+            echo "</ul>";
+            echo "<form class ='comment-form' action='src/add_comments.php' method='post'>";
+            echo "<input type='hidden' name='topic_id' value='$topic_id'>";
+            echo "<input type='hidden' name ='author' value='$user'>";
+            echo "<textarea name = 'text' placeholder='Your Comment'></textarea>";
+            echo "<input class='submit' type='submit' value='Add Comment'>";
+            echo "</form>";
+        }
+
+    }
+    ?>
+    <div class ='page_list'align="center">
+        <a href="?page= <?php ?>"><button class="page_button">1</button></a>
+    </div>
+
+</main>
+<?php
+include "footer.php"
+?>
+</body>
+</html>
+
+
+

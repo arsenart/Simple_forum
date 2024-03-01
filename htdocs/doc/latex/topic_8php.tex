@@ -1,0 +1,71 @@
+\doxysection{topic.\+php File Reference}
+\hypertarget{topic_8php}{}\label{topic_8php}\index{topic.php@{topic.php}}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{create__topic_8php_a5c2e1f936ba91234d2079b8d79d02f15}{if}}(isset(\$\+\_\+\+COOKIE\mbox{[}\textquotesingle{}user\textquotesingle{}\mbox{]})) \mbox{\hyperlink{topic_8php_a16bc7bfe48f7ecbb3259014ec2d1fd25}{else}}
+\item 
+\mbox{\hyperlink{topic_8php_a7079cb9b64d5bda36c83805857879d7b}{\$topic\+\_\+title}} = isset(\$\+\_\+\+GET\mbox{[}\textquotesingle{}topic\textquotesingle{}\mbox{]}) ? \$\+\_\+\+GET\mbox{[}\textquotesingle{}topic\textquotesingle{}\mbox{]}\+:\$\+\_\+\+POST\mbox{[}\textquotesingle{}topic\textquotesingle{}\mbox{]}
+\item 
+\Hypertarget{topic_8php_a047170d6020a882807665812a27e2525}\label{topic_8php_a047170d6020a882807665812a27e2525} 
+{\bfseries \$sql} = "{}SELECT \texorpdfstring{$\ast$}{*} FROM topics where topic =\textquotesingle{}\$topic\+\_\+title\textquotesingle{}"{}
+\item 
+\Hypertarget{topic_8php_a112ef069ddc0454086e3d1e6d8d55d07}\label{topic_8php_a112ef069ddc0454086e3d1e6d8d55d07} 
+{\bfseries \$result} = \$conn-\/$>$query(\$sql)
+\item 
+\Hypertarget{topic_8php_aa1d731aa570613e5bcff831bb10e9b87}\label{topic_8php_aa1d731aa570613e5bcff831bb10e9b87} 
+{\bfseries \$row} = \$result-\/$>$fetch\+\_\+assoc()
+\item 
+\Hypertarget{topic_8php_a213b5776b34d4e439c5301a59d6debcc}\label{topic_8php_a213b5776b34d4e439c5301a59d6debcc} 
+{\bfseries \$topic\+\_\+id} = \$row\mbox{[}\textquotesingle{}id\textquotesingle{}\mbox{]}
+\item 
+\Hypertarget{topic_8php_afe172836ca3d0c604d5bf0378508f614}\label{topic_8php_afe172836ca3d0c604d5bf0378508f614} 
+{\bfseries \$sql1} = "{}SELECT \texorpdfstring{$\ast$}{*} FROM comments where topic\+\_\+id=\textquotesingle{}\$topic\+\_\+id\textquotesingle{}"{}
+\item 
+\Hypertarget{topic_8php_aadc133aa53ccc613264bdd747b262dae}\label{topic_8php_aadc133aa53ccc613264bdd747b262dae} 
+{\bfseries \$result1} = \$conn-\/$>$query(\$sql1)
+\item 
+\Hypertarget{topic_8php_add60224bd7e5e2817c9bfa764565cd39}\label{topic_8php_add60224bd7e5e2817c9bfa764565cd39} 
+{\bfseries \$topic\+\_\+author} = \$row\mbox{[}\textquotesingle{}Author\textquotesingle{}\mbox{]}
+\item 
+\Hypertarget{topic_8php_a0bda34befea10a3fd1fce0d0b4f9f3f8}\label{topic_8php_a0bda34befea10a3fd1fce0d0b4f9f3f8} 
+{\bfseries \$comments} = array()
+\item 
+\Hypertarget{topic_8php_a662d8baace3ffc5cca4e9dc86ac2cf84}\label{topic_8php_a662d8baace3ffc5cca4e9dc86ac2cf84} 
+{\bfseries foreach} ( \$comments as \$row1)
+\item 
+\mbox{\hyperlink{topic_8php_acbc639fd790f5e32c979ad288923ca93}{if}} (isset( \$\+\_\+\+COOKIE\mbox{[} \textquotesingle{}user\textquotesingle{}\mbox{]}))
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Topic Page.
+
+PHP version 7.\+4 
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{topic_8php_a7079cb9b64d5bda36c83805857879d7b}\label{topic_8php_a7079cb9b64d5bda36c83805857879d7b} 
+\index{topic.php@{topic.php}!\$topic\_title@{\$topic\_title}}
+\index{\$topic\_title@{\$topic\_title}!topic.php@{topic.php}}
+\doxysubsubsection{\texorpdfstring{\$topic\_title}{\$topic\_title}}
+{\footnotesize\ttfamily \$topic\+\_\+title = isset(\$\+\_\+\+GET\mbox{[}\textquotesingle{}topic\textquotesingle{}\mbox{]}) ? \$\+\_\+\+GET\mbox{[}\textquotesingle{}topic\textquotesingle{}\mbox{]}\+:\$\+\_\+\+POST\mbox{[}\textquotesingle{}topic\textquotesingle{}\mbox{]}}
+
+Display search bar. Fetch and display topic and its comments. \Hypertarget{topic_8php_a16bc7bfe48f7ecbb3259014ec2d1fd25}\label{topic_8php_a16bc7bfe48f7ecbb3259014ec2d1fd25} 
+\index{topic.php@{topic.php}!else@{else}}
+\index{else@{else}!topic.php@{topic.php}}
+\doxysubsubsection{\texorpdfstring{else}{else}}
+{\footnotesize\ttfamily \mbox{\hyperlink{create__topic_8php_a5c2e1f936ba91234d2079b8d79d02f15}{if}} (isset( \$\+\_\+\+COOKIE\mbox{[} \textquotesingle{}user\textquotesingle{}\mbox{]})) else}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ require\_once\ \textcolor{stringliteral}{'header.php'}}
+
+\end{DoxyCode}
+HTML document type and language. Include header based on user authentication. \Hypertarget{topic_8php_acbc639fd790f5e32c979ad288923ca93}\label{topic_8php_acbc639fd790f5e32c979ad288923ca93} 
+\index{topic.php@{topic.php}!if@{if}}
+\index{if@{if}!topic.php@{topic.php}}
+\doxysubsubsection{\texorpdfstring{if}{if}}
+{\footnotesize\ttfamily if(isset(\$\+\_\+\+COOKIE\mbox{[}\textquotesingle{}user\textquotesingle{}\mbox{]})) (\begin{DoxyParamCaption}\item[{isset( \$\+\_\+\+COOKIE\mbox{[} \textquotesingle{}user\textquotesingle{}\mbox{]})}]{ }\end{DoxyParamCaption})}
+
+Display comment form if the user is authenticated. Include footer. 

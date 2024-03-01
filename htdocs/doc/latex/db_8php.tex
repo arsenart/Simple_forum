@@ -1,0 +1,41 @@
+\doxysection{src/db.php File Reference}
+\hypertarget{db_8php}{}\label{db_8php}\index{src/db.php@{src/db.php}}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{db_8php_a127f40bba7579be61826b0ebd636b5b1}\label{db_8php_a127f40bba7579be61826b0ebd636b5b1} 
+{\bfseries \$db\+\_\+host} = \textquotesingle{}localhost\textquotesingle{}
+\item 
+\Hypertarget{db_8php_a6a2ff59abacecba75a151826de414a27}\label{db_8php_a6a2ff59abacecba75a151826de414a27} 
+{\bfseries \$db\+\_\+user} = \textquotesingle{}root\textquotesingle{}
+\item 
+\Hypertarget{db_8php_a2962c2bda65ca19dd4dd12d7160f1bf8}\label{db_8php_a2962c2bda65ca19dd4dd12d7160f1bf8} 
+{\bfseries \$db\+\_\+password} =\textquotesingle{}root\textquotesingle{}
+\item 
+\Hypertarget{db_8php_ac6bf4453ad07c700c4d8a1e79939f417}\label{db_8php_ac6bf4453ad07c700c4d8a1e79939f417} 
+{\bfseries \$db\+\_\+db} = \textquotesingle{}arsenart\textquotesingle{}
+\item 
+\mbox{\hyperlink{db_8php_aa8a5a87b9c1a6a0819b88447cbe41877}{\$conn}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Database connection configuration and initialization. 
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{db_8php_aa8a5a87b9c1a6a0819b88447cbe41877}\label{db_8php_aa8a5a87b9c1a6a0819b88447cbe41877} 
+\index{db.php@{db.php}!\$conn@{\$conn}}
+\index{\$conn@{\$conn}!db.php@{db.php}}
+\doxysubsubsection{\texorpdfstring{\$conn}{\$conn}}
+{\footnotesize\ttfamily \$conn}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{new}\ mysqli(}
+\DoxyCodeLine{\ \ \ \ \$db\_host,}
+\DoxyCodeLine{\ \ \ \ \$db\_user,}
+\DoxyCodeLine{\ \ \ \ \$db\_password,}
+\DoxyCodeLine{\ \ \ \ \$db\_db}
+\DoxyCodeLine{)}
+
+\end{DoxyCode}

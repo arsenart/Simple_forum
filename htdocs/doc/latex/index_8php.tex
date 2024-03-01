@@ -1,0 +1,68 @@
+\doxysection{index.\+php File Reference}
+\hypertarget{index_8php}{}\label{index_8php}\index{index.php@{index.php}}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{create__topic_8php_a5c2e1f936ba91234d2079b8d79d02f15}{if}}(isset(\$\+\_\+\+COOKIE\mbox{[}\textquotesingle{}user\textquotesingle{}\mbox{]})) \mbox{\hyperlink{index_8php_a16bc7bfe48f7ecbb3259014ec2d1fd25}{else}}
+\item 
+\mbox{\hyperlink{index_8php_a047170d6020a882807665812a27e2525}{\$sql}} = "{}SELECT \texorpdfstring{$\ast$}{*} FROM topics"{}
+\item 
+\Hypertarget{index_8php_af27a9140d5f2658693e7fd107f716449}\label{index_8php_af27a9140d5f2658693e7fd107f716449} 
+{\bfseries \$stmt} = \$conn-\/$>$prepare(\$sql)
+\item 
+\Hypertarget{index_8php_a112ef069ddc0454086e3d1e6d8d55d07}\label{index_8php_a112ef069ddc0454086e3d1e6d8d55d07} 
+{\bfseries \$result} = \$stmt-\/$>$get\+\_\+result()
+\item 
+\Hypertarget{index_8php_a134f702a01a7547726ee26a7ea2eb32f}\label{index_8php_a134f702a01a7547726ee26a7ea2eb32f} 
+\mbox{\hyperlink{create__topic_8php_a5c2e1f936ba91234d2079b8d79d02f15}{if}}(!isset(\$\+\_\+\+GET\mbox{[}\textquotesingle{}page\textquotesingle{}\mbox{]})) {\bfseries \$page} = \$\+\_\+\+GET\mbox{[}\textquotesingle{}page\textquotesingle{}\mbox{]}
+\item 
+\Hypertarget{index_8php_a963111fcbefb0f8121420da8f1f4154b}\label{index_8php_a963111fcbefb0f8121420da8f1f4154b} 
+{\bfseries \$topics} = array()
+\item 
+\Hypertarget{index_8php_a21c90060e0c6ecc467322d229d5c6f5e}\label{index_8php_a21c90060e0c6ecc467322d229d5c6f5e} 
+foreach(\$result as \$row) {\bfseries \$topic\+\_\+per\+\_\+page} = 3
+\item 
+\Hypertarget{index_8php_a2bd0991325178934f5f999b40d19a91a}\label{index_8php_a2bd0991325178934f5f999b40d19a91a} 
+{\bfseries \$count\+\_\+of\+\_\+pages} = ceil(count(\$topics) / \$topic\+\_\+per\+\_\+page)
+\item 
+\Hypertarget{index_8php_a9ca1db7a214fa27fd2774895f8477c22}\label{index_8php_a9ca1db7a214fa27fd2774895f8477c22} 
+{\bfseries \$start\+\_\+index} = (\$page -\/ 1) \texorpdfstring{$\ast$}{*} \$topic\+\_\+per\+\_\+page
+\item 
+\Hypertarget{index_8php_ac19c4fdfdd4c8d52ff97d6c06966f79c}\label{index_8php_ac19c4fdfdd4c8d52ff97d6c06966f79c} 
+{\bfseries \$end\+\_\+index} = min(\$page \texorpdfstring{$\ast$}{*} \$topic\+\_\+per\+\_\+page, count(\$topics))
+\item 
+for( \$i=\$start\+\_\+index;\$i$<$ \$end\+\_\+index;\$i++) for(\$p=0; \$p$<$ \$count\+\_\+of\+\_\+pages; \$p++) \mbox{\hyperlink{index_8php_a15952da5a013cb5be4fec1cd974d0f29}{endfor}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Main Forum Page.
+
+PHP version 7.\+4 
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{index_8php_a047170d6020a882807665812a27e2525}\label{index_8php_a047170d6020a882807665812a27e2525} 
+\index{index.php@{index.php}!\$sql@{\$sql}}
+\index{\$sql@{\$sql}!index.php@{index.php}}
+\doxysubsubsection{\texorpdfstring{\$sql}{\$sql}}
+{\footnotesize\ttfamily \$sql = "{}SELECT \texorpdfstring{$\ast$}{*} FROM topics"{}}
+
+Main Forum Page HTML. Fetching topics from the database. \Hypertarget{index_8php_a16bc7bfe48f7ecbb3259014ec2d1fd25}\label{index_8php_a16bc7bfe48f7ecbb3259014ec2d1fd25} 
+\index{index.php@{index.php}!else@{else}}
+\index{else@{else}!index.php@{index.php}}
+\doxysubsubsection{\texorpdfstring{else}{else}}
+{\footnotesize\ttfamily \mbox{\hyperlink{create__topic_8php_a5c2e1f936ba91234d2079b8d79d02f15}{if}} (isset( \$\+\_\+\+COOKIE\mbox{[} \textquotesingle{}user\textquotesingle{}\mbox{]})) else}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ include\_once\ \textcolor{stringliteral}{'header.php'}}
+
+\end{DoxyCode}
+Including the database connection file. Including the header based on user status. \Hypertarget{index_8php_a15952da5a013cb5be4fec1cd974d0f29}\label{index_8php_a15952da5a013cb5be4fec1cd974d0f29} 
+\index{index.php@{index.php}!endfor@{endfor}}
+\index{endfor@{endfor}!index.php@{index.php}}
+\doxysubsubsection{\texorpdfstring{endfor}{endfor}}
+{\footnotesize\ttfamily for(\$i=\$start\+\_\+index; \$i$<$ \$end\+\_\+index; \$i++) for ( \$p=0;\$p$<$ \$count\+\_\+of\+\_\+pages;\$p++) endfor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Displaying topics and comments. 

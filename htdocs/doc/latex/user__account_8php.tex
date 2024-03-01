@@ -1,0 +1,44 @@
+\doxysection{user\+\_\+account.\+php File Reference}
+\hypertarget{user__account_8php}{}\label{user__account_8php}\index{user\_account.php@{user\_account.php}}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{create__topic_8php_a5c2e1f936ba91234d2079b8d79d02f15}{if}}(!isset(\$\+\_\+\+COOKIE\mbox{[}\textquotesingle{}user\textquotesingle{}\mbox{]})) \mbox{\hyperlink{user__account_8php_ad761a005d02f15a034b01847382ba2a2}{\$username}} = \$\+\_\+\+SESSION\mbox{[}\textquotesingle{}username\textquotesingle{}\mbox{]}
+\item 
+\Hypertarget{user__account_8php_a047170d6020a882807665812a27e2525}\label{user__account_8php_a047170d6020a882807665812a27e2525} 
+{\bfseries \$sql} = "{}SELECT username, email, userpic FROM users WHERE username = \textquotesingle{}\$username\textquotesingle{}"{}
+\item 
+\Hypertarget{user__account_8php_a112ef069ddc0454086e3d1e6d8d55d07}\label{user__account_8php_a112ef069ddc0454086e3d1e6d8d55d07} 
+{\bfseries \$result} = \$conn-\/$>$query(\$sql)
+\item 
+\mbox{\hyperlink{user__account_8php_ab0158ca9a18445b980fa272c75fea0f1}{while}} ( \$row=\$result-\/$>$fetch\+\_\+assoc()) = array\+\_\+reverse(\$comments)
+\item 
+if(isset( \$\+\_\+\+SESSION\mbox{[} \textquotesingle{}change\+\_\+succ\textquotesingle{}\mbox{]})) \mbox{\hyperlink{user__account_8php_a7c6f7d8a174e745ba0d6e74e9b9fc9bc}{if}} (isset( \$\+\_\+\+SESSION\mbox{[} \textquotesingle{}change\+\_\+error\textquotesingle{}\mbox{]}))
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Edit User Data Page.
+
+PHP version 7.\+4 
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{user__account_8php_ad761a005d02f15a034b01847382ba2a2}\label{user__account_8php_ad761a005d02f15a034b01847382ba2a2} 
+\index{user\_account.php@{user\_account.php}!\$username@{\$username}}
+\index{\$username@{\$username}!user\_account.php@{user\_account.php}}
+\doxysubsubsection{\texorpdfstring{\$username}{\$username}}
+{\footnotesize\ttfamily \mbox{\hyperlink{create__topic_8php_a5c2e1f936ba91234d2079b8d79d02f15}{if}} (!isset( \$\+\_\+\+COOKIE\mbox{[} \textquotesingle{}user\textquotesingle{}\mbox{]})) \$username = \$\+\_\+\+SESSION\mbox{[}\textquotesingle{}username\textquotesingle{}\mbox{]}}
+
+HTML document type and language. Include the header for registered users. Database connection and user validation. Redirect to sign-\/in page if the user is not signed in. Fetch user data from the database. \Hypertarget{user__account_8php_a7c6f7d8a174e745ba0d6e74e9b9fc9bc}\label{user__account_8php_a7c6f7d8a174e745ba0d6e74e9b9fc9bc} 
+\index{user\_account.php@{user\_account.php}!if@{if}}
+\index{if@{if}!user\_account.php@{user\_account.php}}
+\doxysubsubsection{\texorpdfstring{if}{if}}
+{\footnotesize\ttfamily if(isset(\$\+\_\+\+SESSION\mbox{[}\textquotesingle{}change\+\_\+succ\textquotesingle{}\mbox{]})) if(isset(\$\+\_\+\+SESSION\mbox{[}\textquotesingle{}change\+\_\+error\textquotesingle{}\mbox{]})) (\begin{DoxyParamCaption}\item[{isset( \$\+\_\+\+SESSION\mbox{[} \textquotesingle{}change\+\_\+error\textquotesingle{}\mbox{]})}]{ }\end{DoxyParamCaption})}
+
+Include Java\+Script script for user interaction. Include the footer. \Hypertarget{user__account_8php_ab0158ca9a18445b980fa272c75fea0f1}\label{user__account_8php_ab0158ca9a18445b980fa272c75fea0f1} 
+\index{user\_account.php@{user\_account.php}!while@{while}}
+\index{while@{while}!user\_account.php@{user\_account.php}}
+\doxysubsubsection{\texorpdfstring{while}{while}}
+{\footnotesize\ttfamily while (\begin{DoxyParamCaption}\item[{}]{\$row = {\ttfamily \$result-\/$>$fetch\+\_\+assoc()} }\end{DoxyParamCaption}) = array\+\_\+reverse(\$comments)}
+
+Display user data and provide options for editing. 

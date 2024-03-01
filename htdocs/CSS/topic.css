@@ -1,0 +1,43 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: antiquewhite; /* Цвет фона */
+}
+
+#topic_form {
+    width: 400px; /* Ширина формы */
+    padding: 20px;
+    background-color: #fff; /* Цвет фона формы */
+    border: 1px solid #ddd; /* Граница формы */
+    border-radius: 5px; /* Скругление углов */
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.submit {
+    background-color: #4CAF50; /* Цвет фона кнопки submit */
+    color: #fff; /* Цвет текста кнопки submit */
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
