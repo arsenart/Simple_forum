@@ -21,7 +21,7 @@ $db_user= 'root';
  * Database user password.
  * @var string
  */
-//$db_password ='webove aplikace';
+
 $db_password = 'root';
 /**
  * Database name.
